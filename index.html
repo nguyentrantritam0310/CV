@@ -31,12 +31,40 @@
         </video>
     </div>
     <div id="edit" style="display: block; opacity: 1;">
-        <div id="wrapper">
+        <div id="wrapper" >
             <!-- <iframe src="./TriTam.pdf#toolbar=0" width="100%" height="100%"></iframe> -->
-            <embed src="./TriTam.pdf#toolbar=0" type="application/pdf" width="100%" height="100%" />
+            <embed id="pdf-viewer" src="./TriTam.pdf#toolbar=0" type="application/pdf" width="100%" height="100%" />
+            <div class="" width="100%">
+                <p id="unsupported-message">Chỉ hỗ trợ màn hình máy tính</p>
+            </div>
 
         </div>
     </div>
 </body>
+<style>
+
+#pdf-viewer {
+  display: block;
+}
+
+#unsupported-message {
+  display: none;
+}
+
+@media (max-width: 768px) { /* điều chỉnh kích thước tùy theo kích thước màn hình */
+  #pdf-viewer {
+    display: none;
+  }
+  
+  #unsupported-message {
+    display: block;
+    /* text-align: center; */
+    font-size: 30px;
+    color: red;
+    padding: 20px;
+  }
+}
+
+</style>
 
 </html>
